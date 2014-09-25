@@ -1,0 +1,6 @@
+This program makes a database of users and a database of movies, then asks
+the user to log in either with a stored username or to create an account. 
+It checks the password and the uniqueness of the username, then will prompt
+you to login.  Once in you can search for movies and choose to 'watch' them
+and rate them.  The ratings are stored and you can check previous ratings 
+of the movies as well.

@@ -1,0 +1,17 @@
+This program creates objects by passing information from Driver into the various constructors of the different
+subclasses of specific animals.  Getters and Setters in each subclass allow one to modify height and weight for
+each object of that subclass.  The objects of the subclasses are stored on ArrayLists with the type of the super 
+class of the subclasses.  Each time an object in created in the constructor, the counter for the super class and
+the zoo class both increase the count of superclass and total animals.  Using a for loop, the objects are printed
+off the array lists in the toString method of each subclass.  The counts are also printed to give the number of 
+animals, mammals, and reptiles. 
+
+Inheritance is helpful in this for some things not everyone should be able to change or see, while others should
+be visible to all.  For example, the nickName of each animal is visible to everyone, but in order to make it 
+unchangeable, the final modifier is added to it. This way the nickName of the animal cannot be changed.  The 
+animal counters cannot be changed by an outside package, or seen by an outside package.  Also since they are static
+they will not change for different objects or subclasses, they will be the same in each class. And, since they
+are protected, the constructors in each class can add to them.  The ArrayLists I made private so Driver can use them,
+but no other class can. That way only Driver can modify and read them, and print them using the toString methods. 
+The getters and setters are public for the weight and height, because an animal can be constantly growing, or gaining
+or losing weight. 

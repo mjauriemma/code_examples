@@ -1,0 +1,5 @@
+This program welcomes the user to USFlix and then asks the user for a keyword.  Then it opens the file named movies and
+reads it line by line using a for loop and storing storing each line as an object of a list array named titles. Then, it 
+takes the titles list and, using a for loop, compares each object in the list against the keyword inputed by the user. 
+The ones that contain or match the keyword are then added to the string results, and once the for loop has iterated fully,
+the results string is printed. 

@@ -1,0 +1,7 @@
+I believe that the iteration is the better design.  Not only does it have
+less of an impact on your stack, it is just simpler.  The recursive loop is
+harder to code, and required another method to make it run correctly. Not to
+mention, the recursive code is an almost exact copy of the iterative code. Only
+instead of a for, it has a base case and a recursive call.  I don't believe that
+recursion was necessary in this case, nor is it practical as an iterative loop is
+far simpler, and easier to explain/code and does the exact same job.

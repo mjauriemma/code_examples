@@ -1,0 +1,10 @@
+My program first tests the args[0] entry (which should be the filename)
+and attempts to run with it.  If that does not work, then it prompts the 
+user for a file name.  It will test the user input, and, if the file is not
+found, the program will ask the user for another filename, until one is found.
+
+The program will then read the doubles out of the file and classify each into
+one of the rating areas, keeping track of the number of entries it reads.  When 
+all the doubles have been read, for loops will create strings of asterisks to print 
+out with the ratings, and a long print statement prints the text block giving the user
+the number of reviews and where each one falls on the rating scale.

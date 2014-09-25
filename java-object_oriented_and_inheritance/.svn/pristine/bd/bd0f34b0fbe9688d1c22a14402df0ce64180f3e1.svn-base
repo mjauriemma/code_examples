@@ -1,0 +1,6 @@
+My program uses one for loop to print the integers from 0 to
+29. Nested in the for loop is an if statement which will
+start a new line every time i is a multiple of 10.
+
+I do not believe it is possible to use any fewer loops as I
+only used one, however a recursive method may be preferred.

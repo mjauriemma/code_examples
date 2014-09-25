@@ -1,0 +1,17 @@
+
+public class Lyric {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		for (int i=1; i<4; i++) {
+		    System.out.println(i+" From Don't Stop Believing by Journey\n" +
+		    		"Just a small town girl, living in a lonely world\n" +
+		    		"She took the midnight train going anywhere");
+
+		}
+	}
+
+}

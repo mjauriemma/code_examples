@@ -1,0 +1,117 @@
+ 
+Programming Interview Tips
+by Philip Guo (contact info)
+September 2011
+
+In early September 2011, I spent two weeks intensely preparing for programming interviews. Here are some notes that might be useful for job applicants who are preparing for these types of interviews.
+Attitude
+
+Before you begin, you need to approach your practice sessions with the right attitude. Think of programming interviews as a form of standardized testing. Don't whine and think to yourself, "but I'll never have to manually reverse a linked list in my job, so these questions are lame!"
+
+Ph.D. students are especially elitist because they somehow think that they are "above" preparing for petty programming interviews. That is a fine attitude if you are applying for pure research or academic jobs, but if you are interviewing at a company that uses programming interviews, then you've gotta prep!
+
+As an analogy to high school standardized testing, I raised my SAT scores by 400 points (back when they were still out of 1600) through a few months of intense practice; there is no way that I could've gotten into MIT with my original scores.
+
+So before you even start practicing, you've gotta just view these interviews as yet another standardized test, another game that you need to play well and beat.
+Practicing
+
+I don't care how smart you are; there is simply no substitute for practicing a ton of problems. Work on problems for as long as you can before your brain explodes, then take a long break to reflect and internalize the lessons you learned through your struggle. And then repeat!
+
+I practiced in front of the whiteboard for 1 to 2 hours at a time and did 1 to 3 practice sessions per day for two full weeks right before my interviews. That was around 40 hours of focused practice, which felt about right to me. You might need to practice more if you have less programming experience.
+
+I used these two books as my main sources of practice problems:
+
+    Programming Interviews Exposed
+    Cracking the Coding Interview
+
+In addition, the Stanford lecture notes on linked lists and binary trees were also a great source of problems:
+
+    Stanford linked list problems (PDF)
+    Stanford binary tree problems
+
+Even if you are not familiar with the programming languages used in these solutions, you can still code up solutions in your own language of choice and write tests to verify that they are correct.
+Getting physical
+
+    Buy your own whiteboard markers and practice using them. I personally like MARKS-A-LOT low-odor markers, since the markers found in most office conference rooms make me nauseous.
+
+    Always practice by writing code on a whiteboard. If you are in school, then there should be plenty of whiteboards around campus for you to use. If you are working in an office, then you can use conference rooms after-hours.
+
+    If you cannot practice in front of a whiteboard, then practice by writing code on blank pieces of white paper.
+
+    After you write out your code by hand, type it into your computer to see if it actually compiles and runs correctly. This is an easy way to check for syntax or logical errors in your code. After you have practiced for a few weeks, you should be able to write error-free code on the whiteboard.
+
+    After a week or two of intense practice, you should be able to hand-write legible, well-indented, well-aligned code on the whiteboard. If you cannot do that during your actual interview, then that will make a bad impression. Messiness is a turn-off.
+
+    If you are doing a phone interview where you need to write code in Google Docs (or some other shared document), then practice writing code in that medium! Remember, you will never have a compiler during your interview, so you need to get good at writing compilable, runnable, and correct code even without a compiler handy.
+
+At The Interview
+
+When the interviewer presents a question to you, immediately sketch out a bunch of examples and ask a ton of clarifying questions to make sure you understand exactly what the interviewer is asking you to do.
+
+Draw several examples and ask your interviewer questions of the form, "for this case, you want the result to be X, right?" Do not make any assumptions without first checking them over with your interviewer.
+
+And whatever you do, don't flip out or try to jump straight to coding up an answer. Chances are, you either
+
+    have no idea how to solve the problem, so you flip out and panic,
+
+    or you think you have heard the problem before, so you want to jump the gun and sketch out a solution right away.
+
+The former is obviously bad, but the latter might actually be worse, since you might have seen a similar problem that does not exactly match the problem you have been given. You will look like an idiot if you try to solve the wrong problem by recalling it from memory!
+Common Programming Interview Idioms
+
+Here are some common idioms and patterns that I have observed from doing hundreds of practice interview problems.
+Strings
+
+    Get comfortable manipulating a string as an array of characters, one character at a time (like C-style strings).
+
+Numerical arrays
+
+    Think about iterating backwards over the array elements as well as forwards. Backwards iteration is useful for, say, merging the contents of two arrays "in-place" (i.e., using O(1) outside storage).
+
+    Would the problem be easier if your array were sorted? If so, you can always tell the interviewer that you'd first do an O(n lg n) sort. Heapsort is an asymptotically optimal "in-place" sort. Once your array is sorted, think about how you can use a variant of binary search to get O(lg n) performance rather than O(n) for an algorithm based on linear scanning.
+
+Mappings and sets (hash tables)
+
+    Always think of mapping keys to values to make your life easier. If you can scan through your dataset and create an auxiliary hash table to map keys to values, then you can do O(1) lookups in a latter part of your algorithm.
+
+    For some array-based problems, you might find it useful to create a "reverse mapping" between array elements and their indices. e.g., "the number 42 appears at index 6 in the array" is represented as a mapping of "42 -> 6".
+
+    You can use a hash table as a set to do O(1) membership lookups. If you are being tested on low-level skillz, use bitsets and the proper bit-level operations to operate on them.
+
+Linked lists
+
+    Linked list problems almost always involve singly-linked lists.
+
+    If you are implementing an iterative algorithm to operate on a singly-linked list, chances are that you'll need to walk two pointers, which I like to call cur and prev, down the list until one is null.
+
+    Some problems require you to keep a gap of N elements between your cur and prev pointers.
+
+    Some problems requires your cur and prev pointers to advance at different speeds. e.g., moving prev up by one element while moving cur up by two elements.
+
+    For most recursive algorithms, the base case is when the pointer is null.
+
+    Sometimes you might need to keep a pointer to the final (tail) element of the list as well as to the head.
+
+Binary trees
+
+    Remember that not all binary trees are binary search trees, and know the difference between the two.
+
+    Know about the idea of a balanced binary search tree (e.g., AVL tree or red-black tree), but don't worry about being able to implement one during an interview.
+
+Graphs
+
+    Whenever you need to represent binary relationships, think about using a graph. e.g., X is friends with Y, or X has a crush on Y, or Task X needs to be done before task Y.
+
+    Now that you have a graph representation, what can you do with it? Chances are, you won't be asked to implement any sort of sophisticated graph algorithm since you simply don't have time in a 1-hour interview to do so.
+
+    Definitely know how to implement a depth-first search using a stack data structure (or using recursion, which implicitly uses your function call stack)
+
+    Definitely know how to implement breadth-first search using a queue data structure.
+
+    Draw a few examples of graphs for your particular problem and see what common structure arises, then tailor your algorithms to that type of structure. For example, you might find that the graphs for your problem are all acyclic, or that they always have one unique source and sink node, or that they are bipartite (e.g., for 'matchmaking' problems), or that they are actually trees in disguise :)
+
+    Know about the idea of topological sort.
+
+Edge cases
+
+Always test your algorithm on edge-case examples. e.g., what if the user passes in an empty list or tree, or a list/tree with a single node?

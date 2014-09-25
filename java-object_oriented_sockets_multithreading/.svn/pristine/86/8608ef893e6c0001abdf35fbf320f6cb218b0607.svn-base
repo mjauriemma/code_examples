@@ -1,0 +1,51 @@
+// see http://projecteuler.net/problem=6 for details
+public class ProjectEuler06 {
+
+	
+	/*
+	 * Takes an int as a parameter and counts down while adding it's
+	 * square to the global sum
+	*/
+	public static int sumSquares(int max) {
+		//Sum holds the sum of the squares of the numbers
+		int sum = 0;
+		//Loop counts from one to max
+		for (int i=1; i<=max; i++){
+			//Adds the square of i to sum
+			sum += (i*i);
+		}
+		//Returns the sum of Squares
+		return sum;
+	}
+	
+	/*
+	 * Takes an int as a parameter and counts down while adding the max
+	 * value to the sum
+	 */
+	public static int squareSums(int max) {
+		//Sum holds the value of the sums of max to one
+		int sum = 0;
+		//Loop counts from one to max
+		for (int i=1; i<=max; i++){
+			//adds the current value of i to sum
+			sum += i;
+		}
+		//Returns the square of the sums from i to max
+		return (sum * sum);
+	}
+	//Subtracts the sum of Squares from the square of sums
+	public static int solve(int max) {
+		//returns the value of the square of sums minus the square of sums
+		return (squareSums(max) - sumSquares(max));
+	}
+
+	public static void main(String[] args) {
+
+		// change as necessary to debug
+		int n = 10;
+
+		System.out.printf("sumOfSquares(%d) = %d\n", n, sumSquares(n));
+		System.out.printf("squareOfSums(%d) = %d\n", n, squareSums(n));
+		System.out.printf("solve(%d) = %d\n", n, solve(n));
+	}
+}
